@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { counterContext } from "../context/context.js";
 
-const decrement = () => {
-  return <button onClick={props.banana.decrementCounter}> - </button>;
+const Decrement = props => {
+  const context = useContext(counterContext);
+  return <button onClick={context.decrementCounter}> - </button>;
 };
 
-export default decrement;
+export default Decrement;

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import Increment from "../increment/increment";
+import React, { useContext } from "react";
+import Increment from "../increment/increment.js";
+import { counterContext } from "../context/context.js";
 
 const Count = props => {
-  // const [count, setCount] = useState(0);
+  const context = useContext(counterContext);
 
   const styles = {
     container: {
@@ -28,9 +29,7 @@ const Count = props => {
 
   return (
     <div style={styles.container}>
-      {/* <Increment/> */}
-
-      <span style={styles.counter}>{props.babana.counter}</span>
+      <span style={styles.counter}>{context.counter}</span>
     </div>
   );
 };
